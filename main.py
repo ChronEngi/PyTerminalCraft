@@ -78,6 +78,8 @@ def read_mc_chat():
 
                 only_text = chat_message.split('> ', 1)[-1]
 
+                print('Command: ' + only_text)
+
                 # Esegui il comando usando subprocess
                 subprocess.run(only_text, shell=True)
 
