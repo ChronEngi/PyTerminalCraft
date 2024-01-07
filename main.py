@@ -17,7 +17,8 @@ ctk.set_default_color_theme("chron_theme.json")
 
 app = ctk.CTk()
 app.geometry('500x300')
-app.title('PyChronCraft')
+app.title('PyTerminalCraft')
+app.iconbitmap('icon.ico')
 app.resizable(False, False)
 
 if os.path.exists(personal_path):
