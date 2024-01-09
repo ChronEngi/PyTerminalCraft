@@ -32,12 +32,12 @@ if os.path.exists(personal_path):
 else:
     default_mc_path = os.path.join(os.environ['APPDATA'], 'Roaming', r'.minecraft\logs\latest.log')
     
-print("The path is:", default_mc_path)
+# print("The path is:", default_mc_path)
 
 # Funzioni
 def confirm():
     global user_confirmed
-    print('\nUser confirmed!\n')
+    print('\nUser confirmed\n' + 'Path: ' + log_dir.get() + '\nExecute every ' + delay_value.get() + 'ms\n')
     user_confirmed = True
     app.overrideredirect(True)
     app.geometry('0x0')
@@ -72,7 +72,7 @@ def read_mc_chat():
     if mc_status is True:
 
         if told_its_open is False:
-            print('Minecraft docked!')
+            print('Minecraft Java is running!')
             told_its_open = True
 
         if user_confirmed is True:
@@ -83,13 +83,13 @@ def read_mc_chat():
 
                 only_text = chat_message.split('> ', 1)[-1]
 
-                print('Command: ' + only_text)
+                print('\nCommand: ' + only_text)
 
                 # Esegui il comando usando
                 os.system(only_text)
 
     # Richiama nuovamente la funzione dopo un certo periodo
-    app.after(1000, read_mc_chat)
+    app.after(delay_value.get(), read_mc_chat)
 
 # Elementi UI
 log_dir_title = UI.CTkLabel(app, text='Minecraft log path')
