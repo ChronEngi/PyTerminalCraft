@@ -11,7 +11,7 @@ PyTerminalCraft is a utility designed to parse the Minecraft Java log file and e
 
 ## 1) Python and Ctk 📦
 **Run the 'setup.bat' file to install Python and the customtkinter library automatically.**   
-Otherwise, you can download Python manually and run ``pip3 install customtkinter``
+Otherwise, you can download Python manually and run ``pip3 install customtkinter`` and ``pip3 install tk``
 
 Python: https://www.python.org/downloads/  
 Ctk: https://pypi.org/project/customtkinter/0.3/  
