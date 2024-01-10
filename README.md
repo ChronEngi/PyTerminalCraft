@@ -1,19 +1,21 @@
 # PyTerminalCraft
-It allows you to connect Minecraft chat to the Windows terminal.
-Keep in mind that the code will read chat messages from any player. I do NOT recommend using it in multiplayer.
+
+### ⚠️ DISCLAIMER ⚠️  
+This code executes any text sent in the chat. Use in multiplayer environments is strongly discouraged, and the author disclaims any responsibility for any damage. Use only if you are fully aware of the consequences and have the necessary expertise.
+
+## What's that?
+"PyTerminalCraft is a utility designed to parse the Minecraft Java log file and execute the messages within the computer terminal. This tool enables a good integration of Minecraft chat with the terminal, providing a convenient way to interact with the game's messages directly from the message line interface."
 ![alt text](https://github.com/ChronEngi/PyTerminalCraft/blob/main/resources/Preview.png?raw=true)
 
-# How to run
+# How to run 📘
 
-## 1) Python
-Make sure you have python installed.
+## 1) Python and Ctk 📦
+**Run the 'setup.bat' file to install Python and the customtkinter library automatically.**   
+Otherwise, you can download Python manually and run ``pip3 install customtkinter``
 
-Official website: https://www.python.org/downloads/
+Python: https://www.python.org/downloads/  
+Ctk: https://pypi.org/project/customtkinter/0.3/  
 
-## 2) Libraries
-Make sure you have the customtkinter library installed.
-Run this in terminal to install ctk (customtkinter).
-```pip3 install customtkinter```
-
-## 3) Run
-Run the 'run.bat' file or open terminal in the project root and run ```python main.py```
+## 2) Run 🚀
+**Run the 'run.bat' file.**  
+Otherwise open terminal in the project root and run ```python main.py```
