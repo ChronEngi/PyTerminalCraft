@@ -5,6 +5,7 @@ This code executes any text sent in the chat. Use in multiplayer environments is
 
 ## What's that?
 PyTerminalCraft is a utility designed to parse the Minecraft Java log file and execute the messages within the computer terminal. This tool enables a good integration of Minecraft chat with the terminal, providing a convenient way to interact with the game's messages directly from the message line interface.  
+
 Windows only for now!  
 ![alt text](https://github.com/ChronEngi/PyTerminalCraft/blob/main/resources/Preview.png?raw=true)
 
