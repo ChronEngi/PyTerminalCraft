@@ -111,6 +111,8 @@ def read_log():
                     # Extract the chat message and remove leading/trailing whitespaces
                     return line.split('[Render thread/INFO]: [CHAT] ')[1].strip()
     except FileNotFoundError:
+        msg('Exception while reading a message!', 'ERROR CHRON-001', 0x10)
+
         # Handle the case where the log file is not found
         return None
 
@@ -143,11 +145,6 @@ def read_mc_chat():
     # Check if Minecraft is currently running
     if mc_status is True:
 
-        # Display a message if it's the first time Minecraft is detected as running
-        if told_its_open is False:
-            print('Minecraft Java is running!')
-            told_its_open = True
-
         # Check if the user has confirmed settings
         if user_confirmed_settings is True:
 
@@ -169,6 +166,12 @@ def read_mc_chat():
 
     # Schedule the function to be called again after a certain delay
     app.after(exe_every, read_mc_chat)
+
+# Send an error/info message
+def msg(msg_title, msg_info, msg_type):
+    ctypes.windll.user32.MessageBoxW(0, msg_title, msg_info, msg_type)
+    return
+
 
 
 # UI Elements
@@ -199,7 +202,7 @@ is_minecraft_running()
 
 #   If mc is not running, send an error
 if mc_status is False:
-    ctypes.windll.user32.MessageBoxW(0, 'Minecraft Java is not running!', 'ERROR CHRON-001', 0x10)
+    msg('Minecraft Java is not running!', 'ERROR CHRON-000', 0x10)
     exit()
 
 # read the chat line
