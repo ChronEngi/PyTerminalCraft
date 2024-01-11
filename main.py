@@ -148,21 +148,26 @@ def read_mc_chat():
         # Check if the user has confirmed settings
         if user_confirmed_settings is True:
 
-            # Read the latest chat message from the Minecraft log
-            chat_message = read_log()
+            try:
+                # Read the latest chat message from the Minecraft log
+                chat_message = read_log()
 
-            # Check if there is a new chat message
-            if chat_message != new_chat_message:
-                new_chat_message = chat_message
+                # Check if there is a new chat message
+                if chat_message != new_chat_message:
+                    new_chat_message = chat_message
 
-                # Extract the text portion of the chat message (excluding the player name)
-                only_text = chat_message.split('> ', 1)[-1]
+                    # Extract the text portion of the chat message (excluding the player name)
+                    only_text = chat_message.split('> ', 1)[-1]
 
-                # Print the command to be executed in the terminal
-                print('\nCommand: ' + only_text)
+                    # Print the command to be executed in the terminal
+                    print('\nCommand: ' + only_text)
 
-                # Execute the command using the OS library
-                os.system(only_text)
+                    # Execute the command using the OS library
+                    os.system(only_text)
+            except:
+                msg('Exception while formatting or executing text.\nTry typing "echo fix" in Minecraft chat and reopen the program!', 'ERROR CHRON-002', 0x10)
+                exit()
+        
 
     # Schedule the function to be called again after a certain delay
     app.after(exe_every, read_mc_chat)
