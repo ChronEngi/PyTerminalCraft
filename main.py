@@ -196,6 +196,13 @@ git_credits.place(relx=0.5, rely=1.0, anchor='s')
 
 # Check if Minecraft is running and continuously read the chat
 is_minecraft_running()
+
+#   If mc is not running, send an error
+if mc_status is False:
+    ctypes.windll.user32.MessageBoxW(0, 'Minecraft Java is not running!', 'ERROR CHRON-001', 0x10)
+    exit()
+
+# read the chat line
 read_mc_chat()
 
 
