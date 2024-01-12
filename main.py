@@ -21,7 +21,6 @@ default_mc_path = ''
 told_its_open = False
 disclaimer_text = '⚠️ DISCLAIMER ⚠️ \nThe author is not responsible for any \nissues arising from the usage.'
 multiplayer_warning = 'Remember you are in multiplayer. The creator is not responsible for damage done by you or any other person.'
-new_version_as_default = True
 warning_told = False
 chat_indicators = [
     '[main/INFO]: [CHAT]',                      # Modded version like Optifine and Forge
@@ -32,8 +31,11 @@ chat_indicators = [
 # Terminal name
 ctypes.windll.kernel32.SetConsoleTitleW('PyTerminalCraft')
 
+# Clear terminal at start
+os.system('cls')
+
 # Change terminal color text
-print('\033[96m')
+print('\033[96mStarting...\n')
 
 # UI config - Theme
 UI.set_appearance_mode("Dark")
@@ -75,7 +77,7 @@ def confirm_responsib():
     # Confirm settings button
     confirm_settings_but.pack(padx=10, pady=80)
 
-    # Hidse responsib button and disclaimer
+    # Hide responsib button and disclaimer
     confirm_responsib_but.place_forget()
     disclaimer.pack_forget()
 
